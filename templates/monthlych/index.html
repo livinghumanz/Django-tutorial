@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="color: black;margin-top: 5%;padding: 1%;">
+    <img src="{% static 'images/images.png' %}" alt=" image here " 
+    height="100px" width="100px" style="border-radius: 50%;float: right;">
+    <h1>Welcome to the challenge home page</h1>
+    <ul>
+        {% for element in data %}
+        <li 
+            style="color:{{ color }} ;" 
+        >
+         {{ element }}</li>
+        {% endfor %}
+    </ul>
+    
+</div>
+{% endblock %}

@@ -13,12 +13,12 @@ def home(request):
     data= list(chal.keys())
     if request.method =='POST':
         f_data=request.POST
+        name= f_data['name']
         email=f_data['email']
-        pass1= f_data['p1']
-        pass2= f_data['p2']
-        hresp = "<p>"+ email + " "+ pass1+ "<p>"
-        if pass1 != pass2:
-            return render(request,'monthlych/register.html',{'flag':True})
+        college= f_data['college']
+        contact = f_data['no']
+        loc = f_data['loc']
+        hresp = "<p>"+name+ email +college+contact+loc+ "<p>"
         return HttpResponse(hresp)
         #return render(request,'monthlych/index.html',{'data':data,'color':'red'})
     #return HttpResponse("<h1>iam inside chal</h1>")
